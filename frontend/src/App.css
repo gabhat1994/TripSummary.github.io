@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
 }
 
 ul {
@@ -23,21 +22,31 @@ li a {
   background-color: darkblue;
 }
 
-
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header {
+  width: 100%;
+  height: 240px;
+}
+.header-one {
+  width: 90%;
+  height: 70px;
+  margin-top: 20px;
+  margin-left: 55px;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.header-two {
+  width: 90%;
+  height: 100px;
+  margin-top: 20px;
+  margin-left: 55px;
+
+}
+
+label,
+img,
+button,
+input {
+  margin-left: 10px;
 }
 
 
