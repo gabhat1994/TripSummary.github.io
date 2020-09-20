@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 
 export default function Collapsable(props) {
-  
   const [show, setShow] = useState(false);
-  const handleToggle = () => {
+  const handleToggle = (e) => {
+    e.preventDefault();
     if (show == false) {
       setShow(true);
     } else {
       setShow(false);
     }
   };
-  let style= show == true ? "collapse" : "notcollapse"
+  let style = show == true ? "collapse" : "notcollapse";
   return (
     <div>
       {props.tripDetails != undefined &&
         props.tripDetails.map((trip) => {
           return (
-            <div key={trip.id} className={style}>
+            <div id={trip.id} className={style}>
               <div className="collapse-header">
                 <div
                   className="collapse-header-date"
@@ -31,21 +31,24 @@ export default function Collapsable(props) {
                   Total KM{" "}
                 </div>
                 <div
+                  id={trip.id}
                   className="collapse-header-button"
                   style={{ display: "inline-block" }}
                 >
                   <button
-                    key={trip.id}
+                    name={trip.id}
+                    id={trip.id}
                     style={{ float: "right", marginTop: "15px" }}
-                    onClick={handleToggle}
+                    onClick={(e) => handleToggle(e)}
                   ></button>
                 </div>
               </div>
               {show && (
-                <div className="collapse-expansion">
+                <div className="collapse-expansion" key={trip.id} id={trip.id}>
                   <div
                     className="collapse-table"
                     style={{ border: "1px solid red" }}
+                    id={trip.id}
                   >
                     <table>
                       <tr

@@ -50,14 +50,12 @@ input {
   height: 240px;
   margin-top: 20px;
   margin-left: 55px;
- 
 }
 .notcollapse {
   width: 90%;
   height: 40px;
   margin-top: 20px;
   margin-left: 55px;
- 
 }
 
 .collapse-header {
@@ -92,7 +90,7 @@ input {
 
 .collapse-expansion {
   height: 200px;
-  background-color: #e5e4e2;
+  background-color: white;
   margin-top: -20px;
 }
 
