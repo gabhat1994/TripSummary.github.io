@@ -12,6 +12,13 @@ export default function Collapsable(props) {
     }
   };
 
+  const onMovement = () => {
+    alert("Export Performed !!");
+  };
+  const onStoppage = () => {
+    alert("Export Performed !!");
+  };
+
   let style = show == true ? "collapse" : "notcollapse";
   return (
     <div>
@@ -93,7 +100,28 @@ export default function Collapsable(props) {
                               {tripdetail.startODOMeter} <img src={arror} />{" "}
                               {tripdetail.endODOMeter}
                             </td>
-                            <td>Actions</td>
+                            <td>
+                              <button
+                                style={{
+                                  color: "white",
+                                  backgroundColor: "turquoise",
+                                }}
+                                onClick={onMovement}
+                              >
+                                Movement Report
+                              </button>
+                              <br />
+                              <br />
+                              <button
+                                style={{
+                                  color: "white",
+                                  backgroundColor: "turquoise",
+                                }}
+                                onClick={onStoppage}
+                              >
+                                Stoppage Report
+                              </button>
+                            </td>
                           </tr>
                         );
                       })}

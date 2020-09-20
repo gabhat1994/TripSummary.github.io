@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import searchIcon from "../../src/searchicon.png";
 export default function Header(props) {
+  const [fromDate, setFromDate] = useState();
+  const [toDate, setToDate] = useState();
   const handleClick = () => {
     alert("Search Performed !!");
   };
@@ -9,6 +11,14 @@ export default function Header(props) {
     alert("Export Performed !!");
   };
 
+  const onFromChange = (event) => {
+    setFromDate(event.target.value);
+  };
+
+  const onToChange = (event) => {
+    setToDate(event.target.value);
+  };
+ 
   return (
     <div className="header">
       <div className="header-one">
@@ -27,9 +37,19 @@ export default function Header(props) {
           style={{ float: "right", display: "inline-block", marginTop: "18px" }}
         >
           <label for="birthday">From</label>
-          <input type="date" id="fromdate" name="fromdate" />
+          <input
+            type="date"
+            id="fromdate"
+            name="fromdate"
+            onChange={(event) => onFromChange(event)}
+          />
           <label for="birthday">To</label>
-          <input type="date" id="todate" name="todate" />
+          <input
+            type="date"
+            id="todate"
+            name="todate"
+            onChange={(event) => onToChange(event)}
+          />
 
           <img src={searchIcon} alt="logo" onClick={handleClick} />
           <button style={{ border: "1px solid blue" }} onClick={onExport}>
@@ -45,7 +65,7 @@ export default function Header(props) {
                 width: "30%",
                 height: "40px",
                 display: "inline-block",
-                backgroundColor: "aqua",
+                backgroundColor: "turquoise",
               }}
             >
               {" "}
