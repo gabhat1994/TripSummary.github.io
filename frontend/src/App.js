@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ backgroundColor: "" }}>
       <Navbar />
       <Switch>
         <Route path="/" exact={true} component={HomePage} />

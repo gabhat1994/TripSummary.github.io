@@ -75,12 +75,28 @@ input {
 }
 
 .collapse-table {
-  width: 90%;
+  width: 95%;
   height: 150px;
   margin-top: 20px;
-  margin-left: 55px;
+  margin-left: 30px;
+  padding-top: 20px;
 }
 
 .collapse-expansion {
   height: 200px;
+  background-color: #e5e4e2;
+  margin-top: -20px;
+}
+
+td,
+th {
+  border: 1px solid grey;
+  text-align: left;
+  padding: 8px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
