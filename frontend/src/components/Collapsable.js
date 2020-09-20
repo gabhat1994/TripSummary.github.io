@@ -24,13 +24,19 @@ export default function Collapsable(props) {
                   className="collapse-header-date"
                   style={{ display: "inline-block" }}
                 >
-                  Date : {trip.startDay} - {trip.endDay}
+                  <div style={{ marginTop: "5px", color: "white" }}>
+                    {" "}
+                    Date : {trip.startDay} - {trip.endDay}
+                  </div>
                 </div>
                 <div
                   className="collapse-header-total"
-                  style={{ display: "inline-block" }}
+                  style={{ display: "inline-block", color: "yellow" }}
                 >
-                  Total KM :{trip.totalDistance} Total Expense :{" "}
+                  <span style={{ color: "#0F52BA" }}>
+                    Total KM :{trip.totalDistance}
+                  </span>{" "}
+                  Total Expense :{" "}
                   {trip.hasOwnProperty("totaltripExpenses")
                     ? trip.totaltripExpenses
                     : 0}
@@ -43,7 +49,7 @@ export default function Collapsable(props) {
                   <button
                     name={trip.id}
                     id={trip.id}
-                    style={{ float: "right", marginTop: "15px" }}
+                    style={{ float: "right", marginTop: "20px" }}
                     onClick={(e) => handleToggle(e)}
                   ></button>
                 </div>
