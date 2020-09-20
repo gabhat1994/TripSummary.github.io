@@ -1,7 +1,6 @@
 import React from "react";
 import searchIcon from "../../src/searchicon.png";
 export default function Header(props) {
-  console.log(props);
   const handleClick = () => {
     alert("Search Performed !!");
   };

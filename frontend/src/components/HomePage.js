@@ -24,7 +24,7 @@ export default function HomePage() {
         otherExpenses={data.otherExpenses}
       />
 
-      <Collapsable />
+      <Collapsable tripDetails={data.tripDetails} />
     </div>
   );
 }
