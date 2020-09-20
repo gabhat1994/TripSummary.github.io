@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import arror from "../../src/arror.png";
 
 export default function Collapsable(props) {
   const [show, setShow] = useState(false);
@@ -10,6 +11,7 @@ export default function Collapsable(props) {
       setShow(false);
     }
   };
+  console.log(props.tripDetails, "test");
   let style = show == true ? "collapse" : "notcollapse";
   return (
     <div>
@@ -22,13 +24,15 @@ export default function Collapsable(props) {
                   className="collapse-header-date"
                   style={{ display: "inline-block" }}
                 >
-                  Date :
+                  Date : {trip.startDay} - {trip.endDay}
                 </div>
                 <div
                   className="collapse-header-total"
                   style={{ display: "inline-block" }}
                 >
-                  Total KM{" "}
+                  Total KM :
+                  {parseFloat(trip.tripLists[0].totalKm) +
+                    parseFloat(trip.tripLists[1].totalKm)}
                 </div>
                 <div
                   id={trip.id}
@@ -44,12 +48,8 @@ export default function Collapsable(props) {
                 </div>
               </div>
               {show && (
-                <div className="collapse-expansion" key={trip.id} id={trip.id}>
-                  <div
-                    className="collapse-table"
-                    style={{ border: "1px solid red" }}
-                    id={trip.id}
-                  >
+                <div className="collapse-expansion" id={trip.id}>
+                  <div className="collapse-table" id={trip.id}>
                     <table>
                       <tr
                         style={{ backgroundColor: "#3090C7", color: "white" }}
@@ -64,6 +64,27 @@ export default function Collapsable(props) {
                         <th>Odometer Reading</th>
                         <th>Actions</th>
                       </tr>
+                      {trip.tripLists.map((tripdetail) => {
+                        return (
+                          <tr>
+                            <td>{tripdetail.tripId}</td>
+                            <td>
+                              {tripdetail.startPointNode}
+                              <img src={arror} /> {tripdetail.endPointNode}
+                            </td>
+                            <td>{tripdetail.driverName}</td>
+                            <td>{}</td>
+                            <td>{tripdetail.totalKm}</td>
+                            <td>{tripdetail.gpsDistance}</td>
+                            <td>{tripdetail.tripRunningTime}</td>
+                            <td>
+                              {tripdetail.startODOMeter} <img src={arror} />{" "}
+                              {tripdetail.endODOMeter}
+                            </td>
+                            <td>Actions</td>
+                          </tr>
+                        );
+                      })}
                     </table>
                   </div>
                 </div>
