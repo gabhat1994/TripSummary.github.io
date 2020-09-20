@@ -6,13 +6,24 @@ import Collapsable from "./Collapsable";
 
 export default function HomePage() {
   const dispatch = useDispatch();
-  const dataReducer = useSelector((state) => state.dataReducer);
   useEffect(() => {
     dispatch(getData());
   }, []);
+  const dataReducer = useSelector((state) => state.dataReducer);
+  const { data } = dataReducer;
+
   return (
     <div>
-      <Header />
+      <Header
+        vehicleNo={data.vehicleNo}
+        totalTrips={data.totalTrips}
+        totalKm={data.totalKm}
+        totalTripTime={data.totalTripTime}
+        totalTime={data.totalTime}
+        totalExpences={data.totalExpences}
+        otherExpenses={data.otherExpenses}
+      />
+
       <Collapsable />
     </div>
   );

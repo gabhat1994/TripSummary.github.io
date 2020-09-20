@@ -1,7 +1,7 @@
-import { GET_DATA , GET_DATA_FAILED } from "../constant/constant";
-import axios from "axios"
+import { GET_DATA, GET_DATA_FAILED } from "../constant/constant";
+import axios from "axios";
 
-const getData = () => async (dispatch, getState) => {
+const getData = () => async (dispatch) => {
   let postBody = {
     clientId: 10,
     dataRecord: {
@@ -20,10 +20,10 @@ const getData = () => async (dispatch, getState) => {
       postBody,
       {}
     );
-    dispatch({ type: GET_DATA, payload: data });
+    dispatch({ type: GET_DATA, payload: data.data });
   } catch (error) {
     dispatch({ type: GET_DATA_FAILED, payload: error.message });
   }
 };
 
-export {getData}
+export { getData };

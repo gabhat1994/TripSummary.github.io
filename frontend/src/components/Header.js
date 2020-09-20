@@ -1,6 +1,7 @@
 import React from "react";
 import searchIcon from "../../src/searchicon.png";
-export default function Header() {
+export default function Header(props) {
+  console.log(props);
   const handleClick = () => {
     alert("Search Performed !!");
   };
@@ -56,7 +57,7 @@ export default function Header() {
                   marginTop: "10px",
                 }}
               >
-                DL1LW 6461(TATA ACE)
+                {props.vehicleNo}
               </div>
             </div>
             <div
@@ -75,7 +76,7 @@ export default function Header() {
                   marginTop: "10px",
                 }}
               >
-                Total Trips : 11
+                Total Trips : {props.totalTrips}
               </div>
             </div>
             <div
@@ -94,7 +95,7 @@ export default function Header() {
                   marginTop: "10px",
                 }}
               >
-                Total KM : 497.0 KM
+                Total KM : {props.totalKm}
               </div>
             </div>
           </div>
@@ -115,7 +116,7 @@ export default function Header() {
                   marginTop: "10px",
                 }}
               >
-                Trip Time : 10 Hrs 42 mm
+                Trip Time : {props.totalTripTime}
               </div>
             </div>
             <div
@@ -135,7 +136,7 @@ export default function Header() {
                   marginTop: "10px",
                 }}
               >
-                Total Time : 15 Hrs 46 mm
+                Total Time : {props.totalTime}
               </div>
             </div>
             <div
@@ -155,7 +156,7 @@ export default function Header() {
                   marginTop: "10px",
                 }}
               >
-                Total Exp : Rs 2000.0
+                Total Exp : Rs {props.totalExpences}
               </div>
             </div>
           </div>
@@ -171,7 +172,7 @@ export default function Header() {
           }}
         >
           <div style={{ marginLeft: "20px", marginTop: "40px" }}>
-            Other Exp : Rs 0.00
+            Other Exp : Rs {props.otherExpenses}
           </div>
         </div>
       </div>
