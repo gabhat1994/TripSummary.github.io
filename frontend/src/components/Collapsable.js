@@ -30,7 +30,10 @@ export default function Collapsable(props) {
                   className="collapse-header-total"
                   style={{ display: "inline-block" }}
                 >
-                  Total KM :{trip.totalDistance} Total Expense : {}
+                  Total KM :{trip.totalDistance} Total Expense :{" "}
+                  {trip.hasOwnProperty("totaltripExpenses")
+                    ? trip.totaltripExpenses
+                    : 0}
                 </div>
                 <div
                   id={trip.id}
