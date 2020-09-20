@@ -20,7 +20,7 @@ const getData = () => async (dispatch) => {
       postBody,
       {}
     );
-// logic for total distance computtaion 
+    // logic for total distance computtaion
     data.data.tripDetails.forEach((element) => {
       let total = 0;
       element.tripLists.forEach((x) => {
@@ -28,13 +28,24 @@ const getData = () => async (dispatch) => {
         element.totalDistance = total;
       });
     });
-// logic for total expense computtaion 
+    // logic for total expense computtaion
     data.data.tripDetails.forEach((element) => {
+      let te = 0;
       element.tripLists.forEach((x) => {
-        let te = 0;
         x.tripExpenses.forEach((z) => {
           te = te + z.amount;
           element.totaltripExpenses = te;
+        });
+      });
+    });
+
+    // logic for trip expense computtaion
+    data.data.tripDetails.forEach((element) => {
+      element.tripLists.forEach((x) => {
+        let tte = 0;
+        x.tripExpenses.forEach((z) => {
+          tte = tte + z.amount;
+          x.nettripExpenses = tte;
         });
       });
     });

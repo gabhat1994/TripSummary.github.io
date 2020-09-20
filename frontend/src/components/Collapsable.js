@@ -74,7 +74,12 @@ export default function Collapsable(props) {
                               <img src={arror} /> {tripdetail.endPointNode}
                             </td>
                             <td>{tripdetail.driverName}</td>
-                            <td>{}</td>
+                            <td>
+                              {tripdetail.hasOwnProperty("nettripExpenses")
+                                ? tripdetail.nettripExpenses
+                                : 0}
+                            </td>
+
                             <td>{tripdetail.totalKm}</td>
                             <td>{tripdetail.gpsDistance}</td>
                             <td>{tripdetail.tripRunningTime}</td>
