@@ -20,6 +20,63 @@ const getData = () => async (dispatch) => {
       postBody,
       {}
     );
+
+    data.data.tripDetails.forEach((element) => {
+      let total = 0
+      element.tripLists.forEach((x) => {
+         total = total + parseFloat(x.totalKm);
+        element.totalDistance = total;
+      });
+    });
+
+  
+
+
+   
+
+    //   data.data.tripDetails[0].totalTripsExpense =
+    //   parseFloat(data.data.tripDetails[0].tripLists[0].totalKm) +
+    //   parseFloat(data.data.tripDetails[0].tripLists[1].totalKm);
+
+    // data.data.tripDetails[1].totalTripsExpense =
+    //   parseFloat(data.data.tripDetails[1].tripLists[0].totalKm) +
+    //   parseFloat(data.data.tripDetails[1].tripLists[1].totalKm);
+
+    // data.data.tripDetails[2].totalTripsExpense =
+    //   parseFloat(data.data.tripDetails[2].tripLists[0].totalKm) +
+    //   parseFloat(data.data.tripDetails[2].tripLists[1].totalKm);
+
+    // data.data.tripDetails[3].totalTripsExpense =
+    //   parseFloat(data.data.tripDetails[3].tripLists[0].totalKm) +
+    //   parseFloat(data.data.tripDetails[3].tripLists[1].totalKm);
+
+    // data.data.tripDetails[4].totalTripsExpense =
+    //   parseFloat(data.data.tripDetails[0].tripLists[0].totalKm) +
+    //   parseFloat(data.data.tripDetails[0].tripLists[1].totalKm);
+
+    // data.data.tripDetails[5].totalTripsExpense =
+    //   parseFloat(data.data.tripDetails[5].tripLists[0].totalKm) +
+    //   parseFloat(data.data.tripDetails[5].tripLists[1].totalKm);
+
+    // data.data.tripDetails[6].totalTripsExpense =
+    //   parseFloat(data.data.tripDetails[6].tripLists[0].totalKm) +
+    //   parseFloat(data.data.tripDetails[6].tripLists[1].totalKm);
+
+    // data.data.tripDetails[7].totalTripsExpense =
+    //   parseFloat(data.data.tripDetails[7].tripLists[0].totalKm) +
+    //   parseFloat(data.data.tripDetails[7].tripLists[1].totalKm) +
+    //   parseFloat(data.data.tripDetails[7].tripLists[2].totalKm);
+
+    // data.data.tripDetails[8].totalTripsExpense =
+    //   parseFloat(data.data.tripDetails[8].tripLists[0].totalKm) +
+    //   parseFloat(data.data.tripDetails[8].tripLists[1].totalKm);
+
+    // data.data.tripDetails[9].totalTripsExpense =
+    //   parseFloat(data.data.tripDetails[9].tripLists[0].totalKm) +
+    //   parseFloat(data.data.tripDetails[9].tripLists[1].totalKm) +
+    //   parseFloat(data.data.tripDetails[9].tripLists[2].totalKm) +
+    //   parseFloat(data.data.tripDetails[9].tripLists[3].totalKm);
+
     dispatch({ type: GET_DATA, payload: data.data });
   } catch (error) {
     dispatch({ type: GET_DATA_FAILED, payload: error.message });

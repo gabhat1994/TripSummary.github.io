@@ -11,7 +11,7 @@ export default function Collapsable(props) {
       setShow(false);
     }
   };
-  console.log(props.tripDetails, "test");
+
   let style = show == true ? "collapse" : "notcollapse";
   return (
     <div>
@@ -30,9 +30,7 @@ export default function Collapsable(props) {
                   className="collapse-header-total"
                   style={{ display: "inline-block" }}
                 >
-                  Total KM :
-                  {parseFloat(trip.tripLists[0].totalKm) +
-                    parseFloat(trip.tripLists[1].totalKm)}
+                  Total KM :{trip.totalDistance} Total Expense : {}
                 </div>
                 <div
                   id={trip.id}
